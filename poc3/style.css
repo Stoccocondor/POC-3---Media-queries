@@ -1,0 +1,111 @@
+/* Estilo base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+.colunas {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+/* Estilos para dispositivos móveis (smartphone) */
+@media (max-width: 599px) {
+    nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .colunas {
+        flex-direction: column;
+    }
+}
+
+/* Estilos para tablets */
+@media (min-width: 600px) and (max-width: 1023px) {
+    .colunas {
+        flex-direction: row;
+    }
+
+    .colunas article {
+        flex: 1;
+        margin: 0 1rem;
+    }
+}
+
+/* Estilos para desktops */
+@media (min-width: 1024px) {
+    header {
+        text-align: center;
+    }
+
+    .colunas {
+        flex-direction: row;
+    }
+
+    .colunas article {
+        flex: 1;
+        margin: 0 1rem;
+    }
+}
+
+/* Estilos para impressão */
+@media print {
+    body {
+        font-size: 12pt;
+        color: black;
+    }
+
+    nav, header {
+        display: none; /* Oculta o menu na impressão */
+    }
+
+    .colunas {
+        display: block; /* Exibe as colunas uma abaixo da outra */
+    }
+
+    .colunas article {
+        margin: 0; /* Remove a margem das colunas */
+    }
+}
+
+/* Estilos para landscape */
+@media (orientation: landscape) {
+    .colunas {
+        flex-direction: row;
+    }
+
+    .colunas article {
+        flex: 1;
+        margin: 0 2rem;
+    }
+}
+
+/* Estilos para portrait */
+@media (orientation: portrait) {
+    .colunas {
+        flex-direction: column;
+    }
+
+    .colunas article {
+        margin: 1rem 0;
+    }
+}
